@@ -1,0 +1,31 @@
+#open(filename, 'r')
+#'a' 'w' 'r+'
+
+filename = 'random_text.txt'
+
+with open(filename) as f_obj:
+    content = f_obj.read()
+    print(content)
+
+
+with open(filename) as f_obj:
+    for lines in f_obj:
+        print(line.rstrip())
+
+
+with open(filename) as f_obj:
+    lines = f_obj.readlines()
+for line in lines:
+    print(line)
+    
+
+try:
+    with open(filename) as f_obj:
+        content = f_obj.read()
+except FileNotFoundError:
+    error_msg = "Can't find " + filename
+    print(error_msg)
+#   pass
+else:
+    print(content)
+
